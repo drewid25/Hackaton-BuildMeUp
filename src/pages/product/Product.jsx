@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Navbar from '../../component/navbar'
 const Product = () => {
-  return (
-    <div className='flex flex-row items-center p-[50px]'>
+    return (
+        <>
+            <Navbar/>
+       <div className='flex flex-row items-center p-[50px] products-container'>
         <div className='bg-red-500 w-[400px] h-[500px] rounded-lg flex flex-col shadow-lg'>
             <input type="text" placeholder='Search' className='rounded-lg w-[80%] h-[40px] mx-[auto] mt-5 text-center'/>
             <div className='text-white ml-[50px] mt-6'>
@@ -78,6 +80,9 @@ const Product = () => {
             </div>
         </div>
     </div>
+      
+      </>
+   
   )
 }
 

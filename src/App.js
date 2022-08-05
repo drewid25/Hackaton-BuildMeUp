@@ -13,7 +13,7 @@ function App() {
 
         <Route path="/LogIn" element={<LogIn/>}/>
         <Route path="/SingleProduct" element={<SingleProduct/>}/>
-          <Route path="/register" element={<Register/>}/>
+        <Route path="/register" element={<Register/>}/>
         <Route path="/product" element={<Product/>}/>
         <Route path="/checkout" element={<Checkout/>}/>
     
@@ -21,7 +21,7 @@ function App() {
     </Routes>
     </BrowserRouter>
      
-       
+    
   )
    
 

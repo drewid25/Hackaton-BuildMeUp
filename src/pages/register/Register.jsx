@@ -1,9 +1,11 @@
-import React from 'react'
+
 // import './Register.scss'
 
 const Register = () => {
-  return (
-    <div className='container mt-[100px] flex flex-row items-center justify-center'>
+    return (
+
+      
+    <div className='container mt-[100px] flex flex-row mx-auto items-center justify-center'>
         <div class=" flex flex-col items-center  p-5  h-[500px] w-[500px] shadow-xl">
         <p className='self-start text-2xl font-bold text-red-500'>BUILD ME UP!</p>
         <div class="max-w-md w-full space-y-8">

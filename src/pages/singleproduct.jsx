@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../component/navbar'
-import { AiOutlineShopping } from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa';
 function SingleProduct() {
   return (
     <>
@@ -37,7 +37,7 @@ function SingleProduct() {
                       </div>
                   </div>
                   <div>
-                      <a href="" className='add-to-cart'><AiOutlineShopping/>Add to Cart</a>
+                      <a href="" className='add-to-cart'><FaShoppingCart/>Add to Cart</a>
                   </div>
               </div>
           </div> 
