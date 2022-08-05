@@ -1,9 +1,10 @@
 import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import LogIn from "./pages/login";
-import SingleProduct from './pages/singleproduct';
+import LandingPage from './pages/LandingPage';
 import Checkout from "./pages/checkout/Checkout";
 import Register from "./pages/register/Register";
 import Product from "./pages/product/Product";
+// import Admin from './admin/Admin';
 
 
 function App() {
@@ -12,11 +13,11 @@ function App() {
       <Routes>
 
         <Route path="/LogIn" element={<LogIn/>}/>
-        <Route path="/SingleProduct" element={<SingleProduct/>}/>
+        <Route path="/" element={<LandingPage/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/product" element={<Product/>}/>
         <Route path="/checkout" element={<Checkout/>}/>
-    
+        {/* <Route path='/admin' element={<Admin />} /> */}
        
     </Routes>
     </BrowserRouter>

@@ -14,12 +14,56 @@
   }
   ```
 */
-import { LockClosedIcon } from '@heroicons/react/solid'
-import  Navbar from '../component/navbar'
+import React, {useState, useRef} from 'react';
+import { LockClosedIcon } from '@heroicons/react/solid';
+import * as authApi from '../api/Auth';
+
 export default function LogIn() {
+
+
+  const [message, setMessage] = useState('');
+
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const [isSuccess, setIsSuccess] = useState(false);
+
+    const handleSubmit = async(e) =>{
+        e.preventDefault();
+
+        const credentials = {
+            username: emailRef.current.value,
+            password: passwordRef.current.value
+        }
+        try{
+            const data = await authApi.Login(credentials)
+            
+            console.log(data.data)
+            setMessage({success: 'Login Success'})
+            localStorage.setItem('access_token', JSON.stringify(data.data.access_token))
+            localStorage.setItem('user_profile', JSON.stringify(data.data.user_profile))
+
+            setTimeout(() => {
+                if(data.data.user_profile.meta.userType == 'User'){
+                    if(data.data.user_profile.email_verified == true){
+                        setIsSuccess(true)
+                        window.location.href= '/home';
+                    }else{
+                        setIsSuccess(false)
+                        window.location.href = '/Verify'
+                    }
+                }else{
+                    window.location.href= '/Admin';
+                }
+            }, 3000);
+
+        }catch(error){
+            console.log(error)
+            setMessage({error: `${error}`})
+        }
+    }
+
   return (
     <>
-      <Navbar/>
       {/*
         This example requires updating your template:
 
@@ -36,7 +80,7 @@ export default function LogIn() {
             <h2 className="mt-6 text-center text-3xl font-extrabold text-red-600">Sign in to your account</h2>
            
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
@@ -44,6 +88,7 @@ export default function LogIn() {
                   Email address
                 </label>
                 <input
+                  ref={emailRef}
                   id="email-address"
                   name="email"
                   type="email"
@@ -58,6 +103,7 @@ export default function LogIn() {
                   Password
                 </label>
                 <input
+                  ref={passwordRef}
                   id="password"
                   name="password"
                   type="password"

@@ -1,7 +1,9 @@
-import React from 'react'
-import Navbar from '../component/navbar'
+import React from 'react';
+import Navbar from '../component/navbar';
 import { FaShoppingCart } from 'react-icons/fa';
-function SingleProduct() {
+import { Navigate } from 'react-router-dom';
+
+export default function LandingPage() {
   return (
     <>
           <Navbar />
@@ -45,4 +47,3 @@ function SingleProduct() {
   )
 }
 
-export default SingleProduct
