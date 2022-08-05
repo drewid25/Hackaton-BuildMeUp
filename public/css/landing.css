@@ -16,3 +16,9 @@
   min-height: 80vh;
   padding: 1em;
 }
+
+.landing .content .items {
+  width: 30%;
+  min-height: 20vh;
+  background-color: white;
+}

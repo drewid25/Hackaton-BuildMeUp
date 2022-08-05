@@ -12,5 +12,10 @@
         margin: 1em 2em;
         min-height: 80vh;
         padding: 1em;
+        .items {
+            width: 30%;
+            min-height: 20vh;
+            background-color: white;
+        }
     }
 }
