@@ -1,0 +1,32 @@
+.body {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.create-account {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 45%;
+  height: 760px;
+  background-color: aquamarine;
+}
+.create-account .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+.create-account .action {
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  align-self: center;
+  margin-top: 100px;
+}
+.create-account .input {
+  display: flex;
+  flex-direction: column;
+}
+.create-account .input input {
+  width: 200px;
+}/*# sourceMappingURL=Register.css.map */
