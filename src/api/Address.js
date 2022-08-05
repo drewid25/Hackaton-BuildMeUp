@@ -36,10 +36,10 @@ export const getRegions = async() => {
 
 // GET Province
 
-export const getProvince = async(region_id) =>{
+export const getProvinces = async(data) =>{
     const clientAuthorizationToken = await getClientAuthorizationToken();
     return(
-        await axios.post(`${env.REACT_APP_ADDRESS_SERVICE_URL}/provinces`, region_id,
+        await axios.post(`${env.REACT_APP_ADDRESS_SERVICE_URL}/provinces`, data,
         {
             headers:{
                 Authorization: `Bearer ${clientAuthorizationToken}`

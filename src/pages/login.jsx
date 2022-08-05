@@ -14,10 +14,15 @@
   }
   ```
 */
+import React, { useState, useEffect, useRef } from 'react'
 import { LockClosedIcon } from '@heroicons/react/solid'
 import  Navbar from '../component/navbar'
+
+
 export default function LogIn() {
   
+  const userRef = useRef();
+  const passwordRef = useRef();
 
 
   return (
