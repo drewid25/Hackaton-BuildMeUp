@@ -1,11 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Register from "./pages/register/Register";
+import Product from "./pages/product/Product";
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Checkout from "./pages/checkout/Checkout";
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/product" element={<Product/>}/>
+        <Route path="/checkout" element={<Checkout/>}/>
+        
+        
+      </Routes>
+    </BrowserRouter>
   );
 }
 
