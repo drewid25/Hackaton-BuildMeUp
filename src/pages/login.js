@@ -17,6 +17,9 @@
 import { LockClosedIcon } from '@heroicons/react/solid'
 import  Navbar from '../component/navbar'
 export default function LogIn() {
+  
+
+
   return (
     <>
       <Navbar/>
@@ -51,6 +54,7 @@ export default function LogIn() {
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-red-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
+                  ref={userRef}
                 />
               </div>
               <div>
@@ -65,6 +69,7 @@ export default function LogIn() {
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
+                  ref={passwordRef}
                 />
               </div>
             </div>
