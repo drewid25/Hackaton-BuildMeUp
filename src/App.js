@@ -1,11 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Routes,Route} from 'react-router-dom'
+import LogIn from "./pages/login";
+import SingleProduct from './pages/singleproduct';
+
+
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/LogIn" element={<LogIn/>}/>
+        <Route path="/SingleProduct" element={<SingleProduct/>}/>
+         
+    
+       
+    </Routes>
+    </BrowserRouter>
+     
+       
+   
+   
+
   );
 }
 
