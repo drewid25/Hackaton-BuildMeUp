@@ -7,6 +7,7 @@ import Product from "./pages/product/Product";
 import Verify from './pages/Verify';
 import Products from './admin/Products';
 import Users from './admin/Users';
+import NewProduct from './admin/NewProduct';
 // import Admin from './admin/Admin';
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/verify" element={<Verify/>} />
         <Route path="/userList" element={<Users/>} />
         <Route path="/productList" element={<Products/>} />
+        <Route path="/addProduct" element={<NewProduct/>} />
         {/* <Route path='/admin' element={<Admin />} /> */}
        
       </Routes>

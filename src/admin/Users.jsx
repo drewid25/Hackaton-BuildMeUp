@@ -69,7 +69,7 @@ const users=()=> {
             <Sidebar/>
             <div className='flex justify-center items-center'>
             
-                <div className='h-[650px] w-[85%] mt-[20px] ml-[120px]'>
+                <div className='h-[650px] w-[85%] mt-[20px] ml-[170px]'>
                     <p className=' mb-[20px] text-2xl font-bold'>USERS</p>
                     <DataGrid
                         rows={rows}

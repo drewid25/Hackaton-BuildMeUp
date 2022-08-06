@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from './Sidebar';
 import { DataGrid } from '@mui/x-data-grid';
+import {Link} from 'react-router-dom'
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -66,10 +67,12 @@ const Products = () => {
         <Sidebar/>
         <div className='flex justify-center items-center'>
         
-            <div className='h-[650px] w-[85%] mt-[20px] ml-[120px]'>
+            <div className='h-[650px] w-[85%] mt-[20px] ml-[170px]'>
                 <div className='flex flex-row w-[100%] justify-between'>
                     <p className='text-center mb-[20px] text-2xl font-bold'>PRODUCTS</p>
-                    <button className='p-2 bg-red-500 h-[80%] rounded-md shadow-md text-white font-bold'>Add Product</button>
+                    <Link to={'/addProduct'}>
+                        <p className='p-2 bg-red-500 h-[80%] rounded-md shadow-md text-white font-bold'>Add Product</p>
+                    </Link>
                 </div>
                 <DataGrid
                     rows={rows}
