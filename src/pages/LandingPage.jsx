@@ -10,7 +10,7 @@ export default function LandingPage() {
 const newItems = JSON.parse(localStorage.getItem('Items'));
 
 
-const list = [...newItems].map(item => <Items name={item.name} description={item.description} image={item.images.url} />)
+const list = [...newItems].map(item => <Items name={item.name} description={item.description} image={item.images.url} price={item.variants[0].price} />)
         
 // const selectItems = ()=>{
   //   let newItems = [];
@@ -85,8 +85,8 @@ const list = [...newItems].map(item => <Items name={item.name} description={item
   )
 }
 
-const Items = ({name, description, image}) =>{
-
+const Items = ({name, description, image, price}) =>{
+console.log(price)
   return(
     <div className="items" key={name}>
         <div className="item_header">
@@ -95,7 +95,7 @@ const Items = ({name, description, image}) =>{
         <div className="item_body">
             <h5>{name}</h5>
             <p>{description}</p>
-            <h6>P54,000</h6>
+            <h6>{price}</h6>
         </div>
         <div className="item_button">
             <button>Add to cart</button>
