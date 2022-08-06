@@ -1,5 +1,4 @@
 import axios from 'axios';
-import * as config from '../config/Config';
 
 // ADMIN PANEL
 
@@ -17,6 +16,20 @@ const getAdminAuthorizationToken = async() => {
         console.log(error)
     }
 }
+
+// get CLIENT AuthenticationToken function
+const getClientAuthorizationToken = async() => {
+    try {
+        const { data } = await axios.post(`${env.REACT_APP_WALLETS_SERVICE_URL}/auth`, {
+            key: env.REACT_APP_API_KEY,
+            secret: env.REACT_APP_SECRET_KEY,
+        })
+        return data.access_token
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 
 // API CODES BELOW
 
@@ -307,6 +320,36 @@ export const DeleteMedia = async(media_id) => {
     const adminAuthorizationToken = await getAdminAuthorizationToken();
     return (
         await axios.post(`${env.REACT_APP_INVENTORY_SERVICE_URL}/medias/${media_id}`, {
+            headers: {
+                Authorization: `Bearer ${adminAuthorizationToken}`
+            }
+        })
+    )
+}
+
+
+// CLIENT 
+
+
+// GET ALL PRODUCTS
+
+export const ListOfProducts = async(search) => {
+    const clientAuthorizationToken = await getClientAuthorizationToken();
+    return (
+        axios.post(`${env.REACT_APP_INVENTORY_SERVICE_URL}/products`, search, {
+            headers: {
+                Authorization: `Bearer ${clientAuthorizationToken}`
+            }
+        })
+    )
+}
+
+// GET PRODUCT INFORMATION
+
+export const ProductInformation = async(product) => {
+    const adminAuthorizationToken = await getAdminAuthorizationToken();
+    return (
+        axios.get(`${env.REACT_APP_INVENTORY_SERVICE_URL}/admin/products/${product.product_id}`, {
             headers: {
                 Authorization: `Bearer ${adminAuthorizationToken}`
             }

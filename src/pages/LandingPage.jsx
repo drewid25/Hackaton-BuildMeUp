@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../component/navbar';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Navigate } from 'react-router-dom';
+import * as inventoryApi from '../api/Inventory';
+import { list } from 'postcss';
 
 export default function LandingPage() {
+
+const newItems = JSON.parse(localStorage.getItem('Items'));
+
+
+const list = [...newItems].map(item => <Items name={item.name} description={item.description} image={item.images.url} />)
+        
+// const selectItems = ()=>{
+  //   let newItems = [];
+
+  //   [...items].map((item, index) =>{
+  //     let info ={
+  //       product_id: item.product_id
+  //     }
+  //     inventoryApi.ProductInformation(info).then(
+  //       response =>{
+  //       console.log(response)
+  //       newItems.push({data: response.data.data})
+  //       }
+  //     ).catch(error=>{
+  //       console.log(error)
+  //     })
+  //   })
+
+  // }
+
+  // const list = [...items].map(item => <Items name={item.name} description={item.description} />)
 
   return (
     // <>
@@ -49,20 +77,28 @@ export default function LandingPage() {
     <div className="landing">
           <Navbar />
           <div className="content">
-              <Items />
+              {
+              list
+              }
           </div>
     </div>
   )
 }
 
-const Items = () =>{
-  return(
-    <div className="items">
-        <div className="column-1">
+const Items = ({name, description, image}) =>{
 
+  return(
+    <div className="items" key={name}>
+        <div className="item_header">
+            <img src={image} alt="" />
         </div>
-        <div className="column-2">
-          
+        <div className="item_body">
+            <h5>{name}</h5>
+            <p>{description}</p>
+            <h6>P54,000</h6>
+        </div>
+        <div className="item_button">
+            <button>Add to cart</button>
         </div>
     </div>
   )
