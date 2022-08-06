@@ -3,6 +3,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import * as authApi from '../../api/Auth';
 import * as addressApi from '../../api/Address';
+import { FaChevronDown } from 'react-icons/fa'
 
 const Register = () => {
 
@@ -194,19 +195,19 @@ const Register = () => {
     return (
 
       
-    <div className='container mt-[100px] flex flex-row mx-auto items-center justify-center'>
-        <div class=" flex flex-col items-center  p-5  h-[500px] w-[500px] shadow-xl">
-        <p className='self-start text-2xl font-bold text-red-500'>BUILD ME UP!</p>
+    <div className='register-container  mt-[100px] flex flex-row mx-auto items-center justify-center'>
+        <div class=" flex flex-col items-center  p-5  h-[600px] w-[500px] shadow-xl">
+        <p className='self-start text-2xl font-bold text-red-500 mx-auto'>BUILD ME UP!</p>
         <div class="max-w-md w-full space-y-8">
             <div>
             <h2 class="mt-6 text-center text-3xl font-extrabold text-red-500">Create Account</h2>
             </div>
 
 
-            <form class="mt-8 space-y-6" onSubmit={handleSubmit}>
+            <form class="mt-8 space-y-6" onSubmit={handleSubmit} >
                 <input type="hidden" name="remember" value="true"/>
                     <div class="rounded-md shadow-sm -space-y-px">
-                        <div>
+                        <div className="mb-1">
                             <label for="first_name" class="sr-only">First_Name</label>
                             <input ref={firstNameRef} id="first_name" name="first_name" type="text" autocomplete="first_name" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="FirstName"/>
                         </div>
@@ -229,7 +230,7 @@ const Register = () => {
                         </div>
                         <div>
 
-                        <label for="address" class="sr-only">Address</label>
+                        <label for="address" class="sr-only">Address <span><FaChevronDown/></span></label>
                         {/* <input id="address" name="address" type="text" autocomplete="address" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Address"/>
                         */}
                         <select onChange={getAllProvinces} name="regions" id="regions" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Regions">
@@ -247,7 +248,7 @@ const Register = () => {
                             {displayBarangays}
                         </select>
 
-                        <input type="text" ref={zipcodeRef} readOnly />
+                        <input className="ml-3" type="text" ref={zipcodeRef} readOnly />
 
                         </div>
                     </div>
@@ -266,7 +267,7 @@ const Register = () => {
         </div>
         
         </div>
-        <div className='h-[500px] w-[500px] bg-[#EA4335] shadow-xl hidden md:flex items-center justify-center p-3'>
+        <div className='h-[600px] w-[500px] bg-[#EA4335] shadow-xl cta items-center justify-center p-3'>
             <p className='text-5xl font-bold'>CREATE YOUR CUSTOM PC BUILD</p>
         </div>
         

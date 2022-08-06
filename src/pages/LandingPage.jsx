@@ -17,6 +17,7 @@ export default function LandingPage() {
 const newItems = JSON.parse(localStorage.getItem('Items'));
 
 
+
 const list = [...newItems].map(item => <Items name={item.name} description={item.description} image={item.images.url} price={item.price}/>)
 
 return (
@@ -54,27 +55,5 @@ const Items = ({name, description, image, price}) =>{
     </div>
   )
 }
-        
-// const selectItems = ()=>{
-  //   let newItems = [];
 
-  //   [...items].map((item, index) =>{
-  //     let info ={
-  //       product_id: item.product_id
-  //     }
-  //     inventoryApi.ProductInformation(info).then(
-  //       response =>{
-  //       console.log(response)
-  //       newItems.push({data: response.data.data})
-  //       }
-  //     ).catch(error=>{
-  //       console.log(error)
-  //     })
-  //   })
-
-  // }
-
-  // const list = [...items].map(item => <Items name={item.name} description={item.description} />)
-
-  
 

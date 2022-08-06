@@ -3,17 +3,17 @@ import LogIn from "./pages/login";
 import LandingPage from './pages/LandingPage';
 import Checkout from "./pages/checkout/Checkout";
 import Register from "./pages/register/Register";
-import Product from "./pages/product/Product";
+import AddProduct from './admin/AddProduct';
+import Users from './admin/Users';
 import Verify from './pages/Verify';
 import React, {useState, useEffect} from 'react';
 import * as inventoryApi from './api/Inventory';
+
 import Products from './admin/Products';
-import Users from './admin/Users';
 import 'aos/dist/aos.css'
 
 import NewProduct from './admin/NewProduct';
 // import Admin from './admin/Admin';
-
 import Admin from './admin/Admin';
 
 
@@ -29,7 +29,11 @@ function App() {
       const search = {
         search: 'a'
       }
-
+      if(localStorage.getItem('Items')){
+          
+      }else{
+       
+      
       try{
         inventoryApi.ListOfProducts(search).then(response=>{
           // setItems(response.data.data)
@@ -62,6 +66,8 @@ function App() {
       console.log(newItems)
       setItems(newItems)
       setIsLoaded(true);
+    }
+      
   }
 
 useEffect(()=>{
@@ -76,17 +82,16 @@ console.log(items)
         <Route path="/LogIn" element={<LogIn/>}/>
         <Route path="/" element={<LandingPage /> }/>
         <Route path="/register" element={<Register />}/>
-        <Route path="/product" element={<Product/>}/>
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/verify" element={<Verify/>} />
+
 
         <Route path="/userList" element={<Users/>} />
         <Route path="/productList" element={<Products/>} />
         <Route path="/addProduct" element={<NewProduct/>} />
-        {/* <Route path='/admin' element={<Admin />} /> */}
+        
+        <Route path="/productList" element={<AddProduct/>} />
 
-        {/* <Route path="/userList" element={<Users/>} />
-        <Route path="/productList" element={<Products/>} /> */}
         <Route path='/admin' element={<Admin />} />
 
        

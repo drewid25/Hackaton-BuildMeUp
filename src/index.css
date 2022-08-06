@@ -6,15 +6,17 @@
 *{
     margin:0;
     padding:0;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 body{
     background-color: #f1f3f5;
     font-family: 'Poppins', sans-serif;
 }
 
+
 /***LogIn***/
 .main-container{
+    width:800px;
     background-color: white;
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -78,3 +80,152 @@ body{
     height:2rem;
     color:#fff;
 }
+
+
+
+/***Register Container***/
+
+.register-container{
+    width:1000px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+
+/***Verify Container***/
+
+.verifyemail-container{
+    height:12.5%vh;
+    width:31.25%vw;
+    background-color:red;
+    margin:2rem auto;
+
+}
+
+@media (min-width:780px){
+    .verifyemail-container{
+    height:12.5rem;
+    width:31.25rem;
+      margin:2rem auto;
+    }
+    .otp-container{
+    
+    }
+  
+}
+@media (min-width:401px) and (max-width:1024px){
+    .main-container{
+        margin: 200px auto;
+        width:600px;
+        
+    }
+    .cta{
+        width:300px;
+    }
+    .sign-in{
+        width:300px;
+    }
+}
+@media (max-width:780px){
+    .otp-container{
+        height:15.5rem;
+        width:25rem;
+    }
+}
+
+.otp-container{
+    height:12rem;
+    width:30rem;
+    background-color:red;
+    margin:2rem auto;
+    padding:2rem 2rem;
+   
+}
+
+.input-container{
+  margin:1rem 7rem;
+}
+
+.otp-button{
+    margin:1rem auto;
+    cursor:pointer;
+    color:#fff;
+    
+   
+    
+}
+.resend{
+    width:70%;
+    margin:0 5rem;
+    color:black;
+    display:grid;
+    grid-template-columns:repeat(2,1fr) ;
+    font-size:1rem;
+    
+}
+
+.resend-btn{
+    cursor:pointer;
+}
+.code{
+    margin:0 auto;
+}
+
+.otp-button:hover
+{
+    border-radius:9px;
+    padding:0 2rem;
+}
+
+
+
+@media (min-width:360px) and (max-width:400px){
+    .resend{
+      font-size:.8rem;
+      margin:0 2rem
+    }
+    .input-container{
+       margin:0 2rem;
+    }
+    .otp-container{
+       height:15rem;
+       width:20rem;
+     
+    }
+    .resend{
+        font-size:.6rem;
+        margin:0 3rem;
+    }
+    h2{
+        margin-bottom:1rem;
+    }
+    .cta{
+        display:none;
+    }
+    .sign-in{
+        width:300px;
+        margin:0 2rem;
+        text-align:center;
+    }
+    .main-container{
+        margin:200px .8rem;
+        width:350px;
+    }
+    .register-container{
+        width:350px;
+       
+    }
+    form{
+        width:300px;
+        margin:0 auto;
+        padding-top:0;
+    }
+   
+}
+
+
+
+
+
