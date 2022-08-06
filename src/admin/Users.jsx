@@ -97,9 +97,9 @@ useEffect(()=>{
         // </div>
         // );
 
-        <div className='container'>
+        <div className='container flex items-center justify-center'>
         <Sidebar/>
-        <table className='table table-striped'>
+        <table className='table table-striped border border-black w-[1000px] mt-[150px]'>
             <thead>
                 <tr>
                     <th>Full Name</th>

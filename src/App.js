@@ -88,9 +88,9 @@ console.log(items)
 
         <Route path="/userList" element={<Users/>} />
         <Route path="/productList" element={<Products/>} />
-        <Route path="/addProduct" element={<NewProduct/>} />
+        <Route path="/addProduct" element={<AddProduct/>} />
         
-        <Route path="/productList" element={<AddProduct/>} />
+        
 
         <Route path='/admin' element={<Admin />} />
 

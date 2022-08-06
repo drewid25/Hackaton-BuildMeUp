@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import * as inventoryApi from '../api/Inventory';
+import Sidebar from './Sidebar';
 
 
 export default function AddProduct() {
@@ -166,39 +167,44 @@ const handleSubmit = async(e) =>{
   }
   return (
     <div className='addProduct'>
-      
-        <form action="" onSubmit={handleSubmit} className='sec1 d-flex flex-column gap-2'>
-        AddProduct
-            <select ref={storeRef} name="store">
-              {listOfStores}
-            </select>
+      <Sidebar/>
+        <div className=' shadow-lg rounded-lg flex flex-row p-2 w-[700px] h-[500px] mx-auto mt-[150px] justify-evenly items-center'>
+            <form action="" onSubmit={handleSubmit} className='sec1 flex flex-col gap-2 '>
+              <p className='text-2xl font-bold text-center'>Add Product</p>
+                <select ref={storeRef} name="store" className='w-[300px]'>
+                  {listOfStores}
+                </select>
 
-            <input ref={productNameRef} type="text" name='name' placeholder='Product Name' required />
-            <input ref={productDescriptionRef} type="text" placeholder='Product Description' required />
-            <input ref={priceRef} name="price" id="price" placeholder='Price' required />
-            <input ref={quantityRef} name="quantity" id="quantity" placeholder='Quantity' required />
+                <input ref={productNameRef} type="text" name='name' placeholder='Product Name' required />
+                <input ref={productDescriptionRef} type="text" placeholder='Product Description' required />
+                <input ref={priceRef} name="price" id="price" placeholder='Price' required />
+                <input ref={quantityRef} name="quantity" id="quantity" placeholder='Quantity' required />
 
-            <input ref={mediaRef} type="text" readOnly name="media_id" id="media_id" placeholder='Image I.D (you need to upload image first.)' required />
-            <input type="submit" className='btn btn-primary' value='Save Product' />
-        
-        </form>
-        <form action="" className='sec2' onSubmit={handleUpload}>
-          <div className="image card">
-              <img src={newImage} alt="" />
-          </div>
+                <input ref={mediaRef} type="text" readOnly name="media_id" id="media_id" placeholder='Image I.D (you need to upload image first.)' required />
+                <input type="submit" className='btn text-white bg-red-600 hover:bg-white hover:border-black hover:text-black' value='Save Product' />
+            
+            </form>
+            <form action="" className='sec2  flex flex-col ml-5' onSubmit={handleUpload}>
+              <div className="image card flex justify-center items-center p-2 m-2">
+                  <img src={newImage} alt="" className='w-[100px] h-[100px] rounded-md' />
+              </div>
+              <div className='gap-3 flex flex-col justify-center items-center'>
+                <input 
+                id='selectImage'
+                style={{display: 'none'}} 
+                type="file" 
+                onChange={(event) => fileSelectedHandler(event)}
+                /> 
+
+                <button type='button' onClick={openFileUpload} className='btn form-control w-75' ><u><i>Browse Photos</i></u></button>
+
+                <input type="submit" className='btn btn-secondary form-control w-75 text-black' value="Upload"  />
+              </div>
+              
           
-          <input 
-          id='selectImage'
-          style={{display: 'none'}} 
-          type="file" 
-          onChange={(event) => fileSelectedHandler(event)}
-           /> 
-
-          <button type='button' onClick={openFileUpload} className='btn form-control w-75' ><u><i>Browse</i></u></button>
-
-          <input type="submit" className='btn btn-secondary form-control w-75' value="Upload"  />
-      
-        </form>
+            </form>
+        </div>
+        
         
        
 
