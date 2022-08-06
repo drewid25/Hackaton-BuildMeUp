@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Sidebar from './Sidebar';
 import * as userApi from '../api/User'
-
 const Users=()=> {
 
     const [users, setUsers] = useState([]);
@@ -78,7 +77,8 @@ useEffect(()=>{
 
     return (
         
-        <div className='container'>
+        <div className=''>
+        <Sidebar />
         <table className='table table-striped'>
             <thead>
                 <tr>

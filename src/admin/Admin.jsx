@@ -14,21 +14,7 @@ console.log(activePage)
 
   return (
     <div className='dashboard'>
-      <div className="column-1">
-        <Sidebar handleActive={handleActive}/>
-      </div>
-      <div className="column-2">
-        <div className="content">
-          {
-            activePage == 1 ? <Users /> :
-            activePage == 2 ? <AddProduct /> :
-            ''
-            }
-            {/* Content like (userlist or add product) */}
-        </div>
-        
-      </div>
-        
+        <Sidebar/>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import * as inventoryApi from '../api/Inventory';
+import Sidebar from './Sidebar';
 
 
 export default function AddProduct() {
@@ -165,7 +166,8 @@ const handleSubmit = async(e) =>{
     document.getElementById('selectImage').click()
   }
   return (
-    <div className='addProduct'>
+    <div className='addProduct ms-5'>
+      <Sidebar/>
       
         <form action="" onSubmit={handleSubmit} className='sec1 d-flex flex-column gap-2'>
         AddProduct

@@ -21,11 +21,7 @@ function App() {
       const search = {
         search: 'a'
       }
-      if(localStorage.getItem('Items')){
-          
-      }else{
-       
-      
+    
       try{
         inventoryApi.ListOfProducts(search).then(response=>{
           // setItems(response.data.data)
@@ -58,7 +54,7 @@ function App() {
       console.log(newItems)
       setItems(newItems)
       setIsLoaded(true);
-    }
+    
       
   }
 
@@ -72,12 +68,12 @@ console.log(items)
       <Routes>
 
         <Route path="/LogIn" element={<LogIn/>}/>
-        <Route path="/" element={<LandingPage /> }/>
+        {localStorage.getItem('Items')?<Route path="/" element={<LandingPage /> }/>: ''}
         <Route path="/register" element={<Register />}/>
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/verify" element={<Verify/>} />
-        <Route path="/userList" element={<Users/>} />
-        <Route path="/productList" element={<AddProduct/>} />
+        <Route path="/admin/users" element={<Users/>} />
+        <Route path="/admin/addproduct" element={<AddProduct/>} />
         <Route path='/admin' element={<Admin />} />
        
       </Routes>
