@@ -9,7 +9,6 @@ export default function LandingPage() {
 
 const newItems = JSON.parse(localStorage.getItem('Items'));
 
-
 const list = [...newItems].map(item => <Items name={item.name} description={item.description} image={item.images.url} price={item.variants[0].price} />)
         
 // const selectItems = ()=>{

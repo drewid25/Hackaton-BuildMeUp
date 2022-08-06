@@ -26,7 +26,6 @@ function App() {
         inventoryApi.ListOfProducts(search).then(response=>{
           // setItems(response.data.data)
           const newData = response.data.data;
-         
 
           [...newData].map((item) =>{
             let info ={
