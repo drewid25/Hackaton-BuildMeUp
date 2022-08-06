@@ -73,7 +73,7 @@ export default function LogIn() {
         ```
       */}
       <div className="container main-container  lg:flex-row  shadow-2xl h-[500px] w-[800px] mt-[200px] ml-[auto] mr-[auto] border-black">
-        <div className="min-h-full  items-center justify-center py-12 px-4 sm:px-6 lg:px-8 w-[400px]  ">
+        <div className="min-h-full sign-in items-center justify-center py-12 px-4 sm:px-6 lg:px-8 w-[400px]  ">
         <div className=" space-y-8">
           <div>
            
@@ -149,7 +149,7 @@ export default function LogIn() {
           </form>
         </div>
         </div>
-        <div className=" w-[400px]  container-hidden text-center pl-[10px] pr-[10px] pt-[50px]">
+        <div className=" w-[400px] cta container-hidden text-center pl-[10px] pr-[10px] pt-[50px]">
           <h1 className="text-white text-[2rem] mt-[100px] ml-[auto] mr-[auto]">Create your own custom PC Build</h1>
         </div>
       </div>
