@@ -22,7 +22,7 @@ const users=()=> {
 
         const list = [...users].map(user =>{
             return (
-                <tr id={user.id}>
+                <tr key={user.id}>
                     <td>{`${user.last_name}, ${user.first_name}`}</td>
                     <td>{user.birthdate}</td>
                     <td>{user.email}</td>

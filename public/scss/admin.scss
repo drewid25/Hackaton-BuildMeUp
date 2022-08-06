@@ -1,0 +1,54 @@
+$primary-color: white;
+$secondary-color: rgb(244, 233, 233);
+$background: black;
+$text-light: white;
+$text-dark: black;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.dashBoard {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    .column_2 {
+        width: 80%;
+        height: 100%;
+        background-color: $secondary-color;
+        .header {
+            background-color: $primary-color;
+        }
+        .content {
+            width: %;
+            height: 80%;
+            padding: 50px;
+            .addProduct {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                .sec1 {
+                    width: 50%;
+                }
+                .sec2 {
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1em;
+                    padding: 2em;
+                    .image {
+                        width: 75%;
+                        height: 75%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

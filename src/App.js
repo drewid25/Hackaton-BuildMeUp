@@ -7,8 +7,6 @@ import Product from "./pages/product/Product";
 import Verify from './pages/Verify';
 import React, {useState, useEffect} from 'react';
 import * as inventoryApi from './api/Inventory';
-import Products from './admin/Products';
-import Users from './admin/Users';
 import Admin from './admin/Admin';
 
 
@@ -22,7 +20,11 @@ function App() {
       const search = {
         search: 'a'
       }
-
+      if(localStorage.getItem('Items')){
+          
+      }else{
+       
+      
       try{
         inventoryApi.ListOfProducts(search).then(response=>{
           // setItems(response.data.data)
@@ -55,6 +57,8 @@ function App() {
       console.log(newItems)
       setItems(newItems)
       setIsLoaded(true);
+    }
+      
   }
 
 useEffect(()=>{

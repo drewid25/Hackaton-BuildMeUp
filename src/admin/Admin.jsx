@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Sidebar from './Sidebar'
 import Users from './Users';
-import Products from './Products';
+import AddProduct from './AddProduct';
 
 export default function Admin() {
 
@@ -11,15 +11,24 @@ export default function Admin() {
     setActivePage(current)
  } 
 console.log(activePage)
+
   return (
-    <div>
+    <div className='dashboard'>
+      <div className="column-1">
         <Sidebar handleActive={handleActive}/>
-        {
-        activePage == 1 ? <Users /> :
-        activePage == 2 ? <Products /> :
-        ''
-        }
-        {/* Content like (userlist or add product) */}
+      </div>
+      <div className="column-2">
+        <div className="content">
+          {
+            activePage == 1 ? <Users /> :
+            activePage == 2 ? <AddProduct /> :
+            ''
+            }
+            {/* Content like (userlist or add product) */}
+        </div>
+        
+      </div>
+        
     </div>
   )
 }
