@@ -77,10 +77,34 @@ useEffect(()=>{
 }, [])
 
     return (
+<<<<<<< HEAD
     
         <div className='container'>
+=======
+        
+
+        // <div>
+        //     <Sidebar/>
+        //     <div className='flex justify-center items-center'>
+            
+        //         <div className='h-[650px] w-[85%] mt-[20px] ml-[170px]'>
+        //             <p className=' mb-[20px] text-2xl font-bold'>USERS</p>
+        //             <DataGrid
+        //                 rows={rows}
+        //                 columns={columns}
+        //                 pageSize={10}
+        //                 rowsPerPageOptions={[5]}
+        //                 // checkboxSelection={[1]}
+        //             />
+        //         </div>
+        //     </div>
+        // </div>
+        // );
+
+        <div className='container flex items-center justify-center'>
+>>>>>>> 26c2ae735b971d6975045f42011f7be1fab48a53
         <Sidebar/>
-        <table className='table table-striped'>
+        <table className='table table-striped border border-black w-[1000px] mt-[150px]'>
             <thead>
                 <tr>
                     <th>Full Name</th>

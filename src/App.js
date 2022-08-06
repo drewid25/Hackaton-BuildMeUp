@@ -71,8 +71,11 @@ console.log(items)
         <Route path="/register" element={<Register />}/>
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/verify" element={<Verify/>} />
-        <Route path="/admin/users" element={<Users/>} />
-        <Route path="/admin/addproduct" element={<AddProduct/>} />
+
+        <Route path="/userList" element={<Users/>} />
+        <Route path="/productList" element={<Products/>} />
+        <Route path="/addProduct" element={<AddProduct/>} />
+        
         <Route path='/admin' element={<Admin />} />
        
       </Routes>

@@ -37,11 +37,11 @@ const Sidebar = ({handleActive}) => {
       </div>
       <div className='flex flex-col gap-[50px] mt-[100px]'>
         <p className='hover:font-bold hover:text-xl'>Dashboard</p>
-        <a href='/admin/users'>
+        <a href='/userList'>
           <p className='hover:font-bold hover:text-xl'>Users</p>
         </a>
-        <a href='/admin/addproduct'>
-          <p className='hover:font-bold hover:text-xl'>Add Product</p>
+        <a href='/productList'>
+          <p className='hover:font-bold hover:text-xl'>Products</p>
         </a>
         <p className='hover:font-bold hover:text-xl'>Feedbacks</p>
         <p className='hover:font-bold hover:text-xl'>Logout</p>
