@@ -5,6 +5,8 @@ import Checkout from "./pages/checkout/Checkout";
 import Register from "./pages/register/Register";
 import Product from "./pages/product/Product";
 import Verify from './pages/Verify';
+import Products from './admin/Products';
+import Users from './admin/Users';
 // import Admin from './admin/Admin';
 
 
@@ -19,9 +21,11 @@ function App() {
         <Route path="/product" element={<Product/>}/>
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/verify" element={<Verify/>} />
+        <Route path="/userList" element={<Users/>} />
+        <Route path="/productList" element={<Products/>} />
         {/* <Route path='/admin' element={<Admin />} /> */}
        
-    </Routes>
+      </Routes>
     </BrowserRouter>
      
     
