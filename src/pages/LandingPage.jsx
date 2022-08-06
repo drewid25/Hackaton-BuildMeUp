@@ -1,70 +1,80 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../component/navbar';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Navigate } from 'react-router-dom';
+import * as inventoryApi from '../api/Inventory';
+import { list } from 'postcss';
+import Aos from 'aos'
 
 export default function LandingPage() {
 
-  return (
-    // <>
-    //       <Navbar />
-    //       <div className="product-container">
-    //           <div className="product-img-container">
-                  
-    //           </div>
-    //           <div className="product-desc-container">
-    //               <h1 className=' text-[1.5rem] text-red-600'>Processor:</h1>
-    //               <h1 className=' text-[1.5rem] text-red-600'>RAM:</h1>
-    //               <h1 className=' text-[1.5rem] text-red-600'>Video Card:</h1>
-    //               <h1 className=' text-[1.5rem] text-red-600'>Video Card:</h1>
-    //               <h1 className=' text-[1.5rem] text-red-600'>Storage</h1>
-    //               <button className='mt-[1.5rem] bg-red-600 text-white pt-[.5rem] pb-[.5rem] pr-[1rem] pl-[1rem]'>Adds On</button>
-    //               <div className="adds-on">
-    //                   <div className="add-on-product">
-                          
-    //                   </div>
-    //                   <div className="add-on-product">
-                          
-    //                   </div>
-    //                   <div className="add-on-product">
-                          
-    //                   </div>
-    //                   <div className="add-on-product">
-                          
-    //                   </div>
-    //                   <div className="add-on-product">
-                          
-    //                   </div>
-    //                   <div className="add-on-product">
-                          
-    //                   </div>
-    //               </div>
-    //               <div>
-    //                   <a href="" className='add-to-cart'><FaShoppingCart/>Add to Cart</a>
-    //               </div>
-    //           </div>
-    //       </div> 
-    // </>
+  useEffect(()=>{
+        Aos.init({once: true, duration:3000});
+    }, []);
+  
 
-    <div className="landing">
-          <Navbar />
-          <div className="content">
-              <Items />
-          </div>
-    </div>
-  )
+
+const newItems = JSON.parse(localStorage.getItem('Items'));
+
+
+const list = [...newItems].map(item => <Items name={item.name} description={item.description} image={item.images.url} price={item.price}/>)
+
+return (
+    
+
+  <div className="landing">
+        <Navbar />
+        <div className="content" data-aos='fade-down'>
+            {
+            list
+            }
+        </div>
+  </div>
+)
 }
 
-const Items = () =>{
+const Items = ({name, description, image, price}) =>{
+
+  
+
   return(
-    <div className="items">
-        <div className="column-1">
-
+    <div className="items shadow-xl rounded-md" key={name} >
+        <div className="item_header">
+            <img src={image} alt="" />
         </div>
-        <div className="column-2">
-          
+        <div className="item_body gap-2">
+            <h5>{name}</h5>
+            <hr className='border border-black'/>
+            <p>{description}</p>
+            <h6>{price}</h6>
+        </div>
+        <div className="item_button">
+            <button className='p-2 bg-red-500 w-[50px] rounded-md text-white hover:bg-white border hover:border-black hover:text-black'>Add to cart</button>
         </div>
     </div>
   )
 }
+        
+// const selectItems = ()=>{
+  //   let newItems = [];
+
+  //   [...items].map((item, index) =>{
+  //     let info ={
+  //       product_id: item.product_id
+  //     }
+  //     inventoryApi.ProductInformation(info).then(
+  //       response =>{
+  //       console.log(response)
+  //       newItems.push({data: response.data.data})
+  //       }
+  //     ).catch(error=>{
+  //       console.log(error)
+  //     })
+  //   })
+
+  // }
+
+  // const list = [...items].map(item => <Items name={item.name} description={item.description} />)
+
+  
 
