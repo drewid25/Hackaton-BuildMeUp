@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Sidebar from './Sidebar';
 import * as userApi from '../api/User'
 
-const users=()=> {
+const Users=()=> {
 
     const [users, setUsers] = useState([]);
 
@@ -99,4 +99,4 @@ useEffect(()=>{
     
     )
     }
-export default users;
+export default Users;
