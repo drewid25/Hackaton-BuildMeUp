@@ -8,7 +8,15 @@ import Users from './admin/Users';
 import Verify from './pages/Verify';
 import React, {useState, useEffect} from 'react';
 import * as inventoryApi from './api/Inventory';
+
+import Products from './admin/Products';
+import 'aos/dist/aos.css'
+
+import NewProduct from './admin/NewProduct';
+// import Admin from './admin/Admin';
 import Admin from './admin/Admin';
+
+
 
 
 function App() {
@@ -76,9 +84,16 @@ console.log(items)
         <Route path="/register" element={<Register />}/>
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/verify" element={<Verify/>} />
+
+
         <Route path="/userList" element={<Users/>} />
+        <Route path="/productList" element={<Products/>} />
+        <Route path="/addProduct" element={<NewProduct/>} />
+        
         <Route path="/productList" element={<AddProduct/>} />
+
         <Route path='/admin' element={<Admin />} />
+
        
       </Routes>
     </BrowserRouter>

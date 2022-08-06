@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Sidebar from './Sidebar';
-import * as userApi from '../api/User'
+import * as userApi from '../api/user'
 
 const Users=()=> {
 
@@ -78,7 +78,27 @@ useEffect(()=>{
 
     return (
         
+
+        // <div>
+        //     <Sidebar/>
+        //     <div className='flex justify-center items-center'>
+            
+        //         <div className='h-[650px] w-[85%] mt-[20px] ml-[170px]'>
+        //             <p className=' mb-[20px] text-2xl font-bold'>USERS</p>
+        //             <DataGrid
+        //                 rows={rows}
+        //                 columns={columns}
+        //                 pageSize={10}
+        //                 rowsPerPageOptions={[5]}
+        //                 // checkboxSelection={[1]}
+        //             />
+        //         </div>
+        //     </div>
+        // </div>
+        // );
+
         <div className='container'>
+        <Sidebar/>
         <table className='table table-striped'>
             <thead>
                 <tr>
@@ -98,5 +118,6 @@ useEffect(()=>{
     </div>
     
     )
+
     }
 export default Users;
